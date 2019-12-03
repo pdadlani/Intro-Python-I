@@ -49,4 +49,5 @@ print(waypoints)
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
 for place in waypoints:
-    print(place.values())
+    for key, value in place.items(): 
+        print(value)
