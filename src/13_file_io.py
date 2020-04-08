@@ -9,12 +9,10 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Print all the contents of the file, then close the file
 
 # YOUR CODE HERE
-f = open('foo.txt', 'r')
+with open('foo.txt', 'r') as f:
+    print(f.read())
 
-with open('foo.txt') as f:
-    read_data = f.read()
-
-f.close()
+f.closed
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -22,14 +20,8 @@ f.close()
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
-
-f = open('bar.txt', 'w')
-
-f.write('this is random.')
-f.write('text I wanted to show appears.')
-f.write('to see how this works.')
-
-with open('bar.txt') as f:
-    read_data = f.read()
-
-f.close()
+with open('bar.txt', 'w') as f:
+    f.write('hello\n')
+    f.write('this is a test\n')
+    f.write('to see how this works.\n')
+f.closed
